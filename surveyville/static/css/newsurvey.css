@@ -1,0 +1,267 @@
+.content-wraper {
+    display: flex;
+    flex-direction: column;
+}
+
+.surveyform {
+    display: flex;
+    flex-direction: column;
+}
+
+.ns-top_container {
+    width: 100%;
+    min-height: 120px;
+    /*border-bottom: 1px solid rgb(211, 211, 211);*/
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px 0;
+}
+
+.ns-top_container * {
+    margin-bottom: 10px;
+}
+
+.ns-top_container>input,
+textarea {
+    padding: 6px 10px;
+    width: 100%;
+    color: rgb(69 69 69);
+    font-size: 15px;
+    font-family: 'PT Sans', Arial, Tahoma, Verdana, Sans-Serif;
+    resize: none;
+}
+
+.ns-top_container>span:nth-of-type(1) {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ns-top_container>span:nth-of-type(2) {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.expiredate {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.expiredate>span {
+    font-size: 16px;
+    font-weight: 300;
+    padding-right: 14px;
+}
+
+.expiredate>select {
+    font-size: 16px;
+    padding: 4px 8px;
+}
+
+.createsurvey_btn {
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: rgb(217, 17, 17);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s all;
+    margin-left: auto;
+}
+
+.createsurvey_btn:hover {
+    background-color: rgb(247, 84, 84);
+}
+
+
+/*-----------------------------*/
+
+.ns-questions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.ns-left_container {
+    width: 20%;
+    min-height: 400px;
+    padding: 10px 0 30px;
+    border-right: 1px solid rgb(211, 211, 211);
+    display: flex;
+    justify-content: center;
+    /*justify-content: end;*/
+}
+
+.questionlist_wrap {
+    display: flex;
+    flex-direction: column;
+    /*padding-right: 10px;*/
+}
+
+.question_listitem {
+    padding: 4px 11px;
+    font-size: 26px;
+    align-self: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 500px;
+    background-color: rgb(34 97 182);
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.question_listitem:hover {
+    background-color: rgb(50, 120, 211);
+}
+
+
+/*-----------------------------*/
+
+.addremove_container {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.addremove_container>* {
+    font-size: 26px;
+    align-self: center;
+    margin-bottom: 10px;
+    border-radius: 500px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.q_additem {
+    padding: 4px 11px;
+    background-color: rgb(34 97 182);
+    margin-right: 8px;
+}
+
+.q_additem:hover {
+    background-color: rgb(50, 120, 211);
+}
+
+.q_removeitem {
+    padding: 4px 14px;
+    background-color: rgb(200, 31, 31);
+}
+
+.q_removeitem:hover {
+    background-color: rgb(226, 64, 64);
+}
+
+
+/*-----------------------------*/
+
+.ns-right_container {
+    width: 80%;
+    min-height: 400px;
+    padding: 10px 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.question_container {
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    opacity: 0;
+    transition: 0.2s all;
+}
+
+.question_index {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    padding-left: 10px;
+}
+
+.question_content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.question_content>* {
+    margin-bottom: 8px;
+}
+
+.question_content input {
+    padding: 6px 10px;
+    width: 100%;
+    color: rgb(69 69 69);
+    font-size: 15px;
+}
+
+.addanswer {
+    width: 130px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    border-radius: 500px;
+    border: none;
+    background-color: rgb(34 97 182);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.addanswer:hover {
+    background-color: rgb(50, 120, 211);
+}
+
+.answer_item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.answer_index {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.deleteanswer {
+    outline: none;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 500px;
+    background-color: rgb(200, 31, 31);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s all;
+    margin-left: 10px;
+}
+
+.deleteanswer:hover {
+    background-color: rgb(226, 64, 64);
+}
+
+
+/*-----------------------------*/
+
+.tab-active {
+    background-color: rgb(71 152 172);
+}
+
+.tab-active:hover {
+    background-color: rgb(71 152 172);
+}
+
+.tab-activeq {
+    display: flex;
+}
+
+.tab-fade {
+    opacity: 1;
+}

@@ -1,0 +1,64 @@
+{% extends "template_1.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static '/css/newsurvey.css' %}">
+<script src="{% static '/js/newsurvey.js' %}"></script>
+{% endblock head %}
+
+{% block content %}
+<form action="{% url 'createsurvey' %}" method="post" name="surveyform" class="surveyform">
+    <div class="ns-top_container">
+        <span>Başlık:</span>
+        <input name="surveytitle" type="text" placeholder="Başlık">
+        <span>Açıklama:</span>
+        <textarea name="description" rows="3" placeholder="Açıklama"></textarea>
+        <div class="expiredate">
+            <span>Süre seçiniz:</span>
+            <select name="expiredate">
+                <option value="1" selected>1 Gün</option>
+                <option value="2">2 Gün</option>
+                <option value="3">3 Gün</option>
+                <option value="4">4 Gün</option>
+                <option value="5">5 Gün</option>
+                <option value="6">6 Gün</option>
+                <option value="7">1 Hafta</option>
+                <option value="14">2 Hafta</option>
+                <option value="30">1 Ay</option>
+                <option value="60">2 Ay</option>
+                <option value="90">3 Ay</option>
+            </select>
+            <input type="submit" class="createsurvey_btn" value="Bitir">
+        </div>
+    </div>
+    <div class="ns-questions">
+        <div class="ns-left_container">
+            <div class="questionlist_wrap">
+                <div class="addremove_container">
+                    <div class="q_additem" onclick="newquestion(this)">+</div>
+                    <div class="q_removeitem" onclick="removequestion(this)">-</div>
+                </div>
+                <div class="question_listitem tab-active" data-questionindex="1" onclick="showquestion(this)">Soru 1</div>
+            </div>
+        </div>
+        <div class="ns-right_container">
+            <div class="question_container tab-activeq tab-fade" data-question="1">
+                <input type="hidden" name="questionid" value="1">
+                <span class="question_index">Soru 1:</span>
+                <div class="question_content">
+                    <input name="1-question" type="text" placeholder="Soru">
+                    <button class="addanswer" type="button" onclick="newanswer(this)">Cevap ekle</button>
+                    <div class="answer_item">
+                        <span class="answer_index">Cevap: <button class="deleteanswer" type="button" onclick="deleteanswer(this)">Sil</button></span>
+                        <input name="1-answer" type="text" placeholder="Cevap">
+                    </div>
+                    <div class="answer_item">
+                        <span class="answer_index">Cevap: <button class="deleteanswer" type="button" onclick="deleteanswer(this)">Sil</button></span>
+                        <input name="1-answer" type="text" placeholder="Cevap">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock content %}

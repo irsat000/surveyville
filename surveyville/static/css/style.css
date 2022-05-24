@@ -1,0 +1,237 @@
+body {
+    /*
+    background: url('../images/bgblur.jpg') no-repeat fixed center;
+    background-size: auto;
+    background-size: cover;*/
+}
+
+.content_block {
+    min-height: 900px;
+}
+
+.top_title:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #3fa3c9;
+    border-bottom: 5px solid #ffffff;
+}
+
+.top_title:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #3fa3c9;
+    border-top: 5px solid #ffffff;
+}
+
+.content-wraper {
+    /*background-color: #ededed;*/
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+.top_title {
+    background: #3fa3c9;
+    color: #fff;
+}
+
+.top_title .wraper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top_title a {
+    color: #fff;
+}
+
+.header_logo {
+    float: none !important;
+    flex-grow: 1;
+}
+
+.survey_ul li {
+    border-bottom: 1px solid rgb(56, 56, 56);
+}
+
+.expire_date {
+    color: #5eafcd;
+    font-size: 11px;
+    font-weight: normal;
+    font-style: italic;
+    display: block;
+    padding: 8px 0 8px 0;
+}
+
+.anket-btn {
+    border: none;
+    outline: none;
+    border-radius: 3px 20px 3px 3px;
+    width: 180px;
+    background-color: rgb(28, 120, 201);
+    text-shadow: #2c2c2c 0 1px 1px;
+    color: #fff;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.anket-btn:hover {
+    background-color: rgb(23, 100, 168);
+}
+
+.account-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.open-login {
+    margin-right: 12px;
+}
+
+.account-wrap b {
+    text-shadow: #2c2c2c 0 1px 1px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.account-wrap b:hover {
+    text-decoration: underline;
+}
+
+.account-wrap input {
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    padding: 10px 30px;
+    background-color: rgb(28, 120, 201);
+    text-shadow: #2c2c2c 0 1px 1px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+.account-wrap input:hover {
+    background-color: rgb(23, 100, 168);
+}
+
+.anketolustur-btn {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 10px 30px;
+    margin-right: 10px;
+    border-radius: 6px;
+    background-color: rgb(188 46 46) !important;
+    transition: 0.2s all;
+    cursor: pointer;
+    color: #fff;
+}
+
+.anketolustur-btn:hover {
+    background-color: rgb(188, 83, 83) !important;
+}
+
+.profile {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin-left: 10px;
+    border-radius: 6px;
+    padding: 10px 30px 10px 20px;
+    background-color: rgb(27 104 172);
+    transition: 0.2s all;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+}
+
+.profile:hover {
+    background-color: rgb(31, 119, 196);
+}
+
+.pbtnarrowdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 9px 11px;
+    -webkit-transform: rotate(-90deg);
+    font-weight: bold;
+}
+
+.pf_dropdown {
+    position: absolute;
+    right: 0;
+    top: 48px;
+    z-index: 100;
+    background-color: rgb(20, 34, 66);
+    color: #e4e4e4;
+    /*text-shadow: #2c2c2c 0 1px 1px;*/
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s all;
+}
+
+.pf_dropdown li a {
+    display: block;
+    border-bottom: 1px solid rgb(54, 68, 100);
+    text-align: center;
+    padding: 10px 30px;
+    transition: 0.2s all;
+    border-radius: 6px;
+}
+
+.pf_dropdown li:last-child a {
+    border-bottom: none;
+}
+
+.pf_dropdown li a:hover {
+    background-color: rgb(34, 48, 82);
+}
+
+.content_block {
+    margin-top: 8px;
+}
+
+.opacity {
+    opacity: 1 !important;
+    visibility: visible;
+}
+
+
+/*
+.header {
+    text-align: center;
+    color: rgb(44, 44, 44);
+    font-size: 24px;
+    padding: 4px 0;
+}*/
+
+
+/*
+.anketolustur-btn {
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    width: 180px;
+    background-color: rgb(84, 129, 212);
+    text-shadow: #2c2c2c 0 1px 1px;
+    color: #fff;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: 0.3s all;
+    float: right;
+}
+
+.anketolustur-btn:hover {
+    background-color: rgb(73, 111, 181);
+}*/

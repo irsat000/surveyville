@@ -1,0 +1,45 @@
+{% extends "template_1.html" %}
+
+{% block content %}
+<div class="long_text_layout long_text_col_2 gallery">
+    <ul class="survey_ul">
+        {% for survey in surveys %}
+        <li>
+            <div class="desc">
+                <h5>{{survey.s_title}}</h5>
+                <span class="expire_date">
+                    {% if today < survey.expire_date %}
+                    Kalan süre: {{ today|timesince:survey.expire_date }}
+                    {% else %}
+                    Süre doldu
+                    {% endif %}
+                </span>
+                <p>{{survey.s_text}}</p>
+                <p><b>{{survey.participations}} Katılımcı - {{survey.questioncount}} Soru</b></p>
+                {% if today < survey.expire_date %}
+                <input type="button" value="Ankete Katıl" class="anket-btn" onclick="location.href='{% url 'joinsurvey' survey.id %}'">
+                {% else %}
+                <input type="button" value="Sonuçlar" class="anket-btn" onclick="location.href='{% url 'surveyresult' survey.id %}'">
+                {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+        <!--
+        <li>
+            <div class="desc">
+                <h5>Sosyal medya uygulaması anketi</h5>
+                <span class="expire_date">2 gün kaldı</span>
+                <p>Bu ankete katılarak sosyal medya uygulamalarını oylayın.</p>
+                <p><b>221 Katılımcı</b></p>
+                <input type="button" value="Ankete Katıl" class="anket-btn">
+            </div>
+        </li>
+        -->
+    </ul>
+</div>
+<div class="pager_nav">
+    <a href="#">1</a><span>2</span><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+    <a href="#" class="bx-prev">prev</a><a href="#" class="bx-next">next</a>
+</div>
+<!-- /pager_nav -->
+{% endblock content %}

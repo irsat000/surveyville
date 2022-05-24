@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="{% static '/css/template.css' %}">
+    <link rel="stylesheet" href="{% static '/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/modal.css' %}">
+    <script src="{% static '/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static '/js/script.js' %}"></script>
+    
+    {% block head %}
+            
+    {% endblock %}
+    <title>Surveyville</title>
+</head>
+<body>
+    <div class="modal-container" id="login-modal">
+        <form action="signin/" method="POST" class="modal">
+            <button type="button" class="close-modal">×</button>
+            <div class="modal-header">
+                <h2>Giriş Yap</h2>
+            </div>
+            <div class="modal-form">
+                <input type="text" name="username" placeholder="Kullanıcı Adı">
+                <input type="text" name="password" placeholder="Şifre">
+            </div>
+            <div class="modal-btn-wrap">
+                <input type="submit" value="Giriş" class="login-btn">
+            </div>
+        </form>
+    </div>
+    <div class="modal-container" id="signup-modal">
+        <form action="createuser/" method="POST" class="modal">
+            <button type="button" class="close-modal">×</button>
+            <div class="modal-header">
+                <h2>Kayıt Ol</h2>
+            </div>
+            <div class="modal-form">
+                <input type="text" name="email" placeholder="E-Mail">
+                <input type="text" name="username" placeholder="Kullanıcı Adı">
+                <input type="text" name="password" placeholder="Şifre">
+            </div>
+            <div class="modal-btn-wrap">
+                <input type="submit" value="Kayıt Ol" class="signup-btn">
+            </div>
+        </form>
+    </div>
+
+    <div class="content_block">
+        <!-- top_title -->
+        <div class="top_title">
+            <div class="wraper">
+                <h2 class="header_logo"><a href="{% url 'index' %}">SURVEYVILLE</a> <span>Anket konulu projem - 222003545</span></h2>
+                <div class="account-wrap">
+                    {% if user.is_authenticated %}
+                    <button class="anketolustur-btn" onclick="location.href='{% url 'newsurvey' %}'">Anket Oluştur</button>
+                    <!-- <input type="button" value="Anket Oluştur" class="anketolustur-btn"> -->
+                    <button class="profile" onclick="pfDropdown()">PROFİL<span class="pbtnarrowdown"><</span></button>
+                    <ul class="pf_dropdown">
+                        <li><a href="#">{{user.username}}</a></li>
+                        <li><a href="#">Anketlerim</a></li>
+                        <li><a href="#">boş text</a></li>
+                        <li><a href="{% url 'logout' %}">Çıkış yap</a></li>
+                    </ul>
+                    {% else %}
+                    <input type="button" value="Giriş Yap" class="open-login" data-modal="login-modal" onclick="showModal(this)">
+                    <input type="button" value="Kayıt Ol" class="open-signin" data-modal="signup-modal" onclick="showModal(this)">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- /top_title -->
+        <div class="wraper content-wraper">
+            {% block content %}
+            
+            {% endblock %}
+            <!--
+            <div class="long_text_layout long_text_col_2 gallery">
+                <ul class="survey_ul">
+                    <li>
+                        <div class="desc">
+                            <h5>Sosyal medya uygulaması analizi</h5>
+                            <span class="expire_date">2 gün kaldı</span>
+                            <p>Bu ankete katılarak sosyal medya uygulamalarını oylayın.</p>
+                            <p><b>423 Katılımcı</b></p>
+                            <input type="button" value="Ankete Katıl" class="anket-btn">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            -->
+            <!-- /Short Text Layout 3 Column -->
+        </div>
+    </div>
+
+
+</body>
+</html>

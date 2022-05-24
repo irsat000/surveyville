@@ -1,0 +1,30 @@
+{% extends "template_1.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static '/css/surveydetail.css' %}">
+{% endblock head %}
+
+{% block content %}
+    <form class="survey_wraper" action="{% url 'submitsurvey' %}" method="post">
+        <span class="s_title">{{survey.s_title}}</span>
+        <span class="s_description">{{survey.s_text}}</span>
+        <div class="s_questions_cont">
+            {% for question in questions %}
+            <div class="s_question">
+                <span class="s_questiontitle">Soru: {{question.q_text}}</span>
+                <div class="s_answers">
+                    <input type="hidden" name="question" value="{{question.id}}">
+                    {% for answer in question.answer_set.all %}
+                    <label class="s_answer"><input type="radio" name="{{question.id}}-answer" value="{{answer.id}}" class="s_radio">{{answer.a_text}}</label>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="s_buttons">
+            <button class="s_cancelbtn" type="button" onclick="location.href='{% url 'index' %}'">Çık</button>
+            <input class="s_finishbtn" type="submit" value="Bitir">
+        </div>
+    </form>
+{% endblock content %}
